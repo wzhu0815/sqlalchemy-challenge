@@ -25,12 +25,22 @@ app = Flask(__name__)
 def home():
     print("Server received request for 'Home' page...")
     return (
+        f"<h2>Climate Exploration for Hawaii</h2>"
+        f"<p><i>From 2010-01-01</i> to <i>2017-08-23</i></p>"
+        f"<img src='https://cdn.travelpulse.com/images/54aaedf4-a957-df11-b491-006073e71405/ee952e9e-f09c-49c2-bc5d-4303c880173a/630x355.jpg'\ width='350'>"    
         f"<h3>Available Routes:</h3>"
         f"<ul><li>/api/v1.0/precipitation</li>"
         f"<li>/api/v1.0/stations</li>"
         f"<li>/api/v1.0/tobs</li>"
         f"<li>/api/v1.0/start_date</li>"
         f"<li>/api/v1.0/start_date/end_date</li></ul>"
+        f"<h3>Documentation</h3>"
+        f"<dl><dl><i>precipitation</i></dl><dd>-  a dictonary using date as the key and precipitation as the value.</dd>"
+        f"<dl><dl><i>stations</i></dl><dd>-  a list of station names.</dd>"
+        f"<dl><dl><i>tobs</i></dl><dd>-  a list of temperature observations (TOBS) for the previous year (the most active station).</dd>"
+        f"<dl><dl><i>start_date</i></dl><dd>- minimum temperature(TMIN), the average temperature(TAVG), and the max temperature(TMAX) for all\
+        dates greater than and equal to the 'start_date'(date format like 2000-01-01).</dd>"
+        f"<dl><dl><i>start_date/end_date</i></dl><dd>- minimum temperature(TMIN), the average temperature(TAVG), and the max temperature(TMAX) for all dates between the 'start_date' and 'end_date' inclusive (date format like 2000-01-01).</dd>"        
     )
 #  Define what to do when a user hits the index route
 
